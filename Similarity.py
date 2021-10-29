@@ -42,13 +42,6 @@ data = ['Hi',
  'I want to raise a complaint',
  'there is a complaint about a service']
 
-# text_vectorizer = TextVectorization(max_tokens=None,
-#                                     standardize="lower_and_strip_punctuation",
-#                                     split="whitespace",
-#                                     ngrams=None,
-#                                     output_mode="int",
-#                                     output_sequence_length=None)
-
 text_vectorizer = TextVectorization(max_tokens=max_vocab_length,
                                 output_mode='int',
                                 output_sequence_length=max_length)
@@ -73,15 +66,15 @@ def tensorflow_embedding(sentance):
   return np.array(embedding(vectorize)).flatten()
 
 sentc = tensorflow_embedding('Why Do You Want This Job')
-# print(sentc.shape)
+
 def similarity(w1,w2):
-  # print('called')
+
     """
     Args:
         sentance 1: fist sentance
         sectance 2: second sentance
 
-    :return:
+    Return:
         Return a cosine similarity between two sentance
     """
     score = cosine_similarity([tensorflow_embedding(w1)],[tensorflow_embedding(w2)])
@@ -89,5 +82,3 @@ def similarity(w1,w2):
     return score
 
 
-
-# if __name__ == '__main__':
