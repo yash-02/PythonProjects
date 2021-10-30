@@ -212,20 +212,19 @@ def similarity(sentance_1,sentance_2=None,custom = False,dataset=False,display_s
             return score
 
 
-s = 'what is your dream'
-    # s = 'How Did You Hear About This Position'
-
 def similarSenc(sentance):
     """
     It will compare user asked question with data and returns the semantically most similar question.
 
-    Args: user defined question.
-    Return: the semantically most similar question.
+    Args:
+         sentance: user defined question.
+    Return: 
+        the semantically most similar question.
 
     """
     result = []
     for i in data:
-        score = cosine_similarity([tensorflow_embedding(s)], [tensorflow_embedding(i)])[0]
+        score = cosine_similarity([tensorflow_embedding(sentance)], [tensorflow_embedding(i)])[0]
         result.append(score)
 
     re = max(result)
