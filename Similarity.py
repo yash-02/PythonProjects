@@ -158,7 +158,7 @@ def similarity(sentance_1,sentance_2=None,custom = False,dataset=False,display_s
                     dataset=data,
                     display_sentance=True
                     ).
-                    
+
         Ex2: similarity('What Can You Bring to the Company?',
                   'What Are Your Greatest Strengths?',
                   custom=True,
@@ -210,7 +210,10 @@ def similarity(sentance_1,sentance_2=None,custom = False,dataset=False,display_s
             return score[0], eul_d
         else:
             return score
-        
+
+
+s = 'what is your dream'
+    # s = 'How Did You Hear About This Position'
 
 def similarSenc(sentance):
     """
