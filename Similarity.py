@@ -210,4 +210,22 @@ def similarity(sentance_1,sentance_2=None,custom = False,dataset=False,display_s
             return score[0], eul_d
         else:
             return score
+        
+
+def similarSenc(sentance):
+    """
+    It will compare user asked question with data and returns the semantically most similar question.
+
+    Args: user defined question.
+    Return: the semantically most similar question.
+
+    """
+    result = []
+    for i in data:
+        score = cosine_similarity([tensorflow_embedding(s)], [tensorflow_embedding(i)])[0]
+        result.append(score)
+
+    re = max(result)
+    sen = data[result.index(max(result))]
+    return re[0],sen
 
